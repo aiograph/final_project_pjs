@@ -379,3 +379,10 @@ eq.addEventListener('click', () => {
 
     opres.value = result;
 });
+
+
+
+
+
+
+main.style.backgroundColor = '#EEEEEE';
