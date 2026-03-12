@@ -1,6 +1,7 @@
 //ДІСТАЄМ ТІЛО
 const body = document.querySelector('body');
 const main = document.querySelector('main');
+const footer = document.querySelector('footer');
 
 //ДЛЯ МОДАЛОК
 let ismodalactive = true;
@@ -123,10 +124,11 @@ modalsub.addEventListener('click', (e) => {
             //opacity
             header.style.opacity = 1;
             main.style.opacity = 1;
+            footer.style.opacity = 1;
         });
     } else{
         modalinput.placeholder = 'Incorrect name';
-        modalinput.classList.add('red-placeholder')
+        modalinput.classList.add('red-placeholder');
         modalinput.value = '';
     }
 });
@@ -138,6 +140,7 @@ modalcross.addEventListener('click', () => {
     //opacity
     header.style.opacity = 1;
     main.style.opacity = 1;
+    footer.style.opacity = 1;
 });
 
 if(ismodalactive){
@@ -146,7 +149,9 @@ if(ismodalactive){
     //opacity
     header.style.opacity = 0.8;
     main.style.opacity = 0.8;
+    footer.style.opacity = 0.8;
     main.style.backgroundColor = 'white';
+    footer.style.backgroundColor = 'white';
 };
 
 // ВИСІКОСНИЙ РІК
@@ -380,9 +385,119 @@ eq.addEventListener('click', () => {
     opres.value = result;
 });
 
+//TIME CALC
+const timeinp = document.querySelector('#timeinp');
+const timeres = document.querySelector('#timeres');
+const timecalc = document.querySelector('#timecalc');
+
+timecalc.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    let timetocalc = timeinp.value;// 2900;
+    
+    let days = 0;
+    let hours = 0;
+    let minutes = 0;
+    let result = 0;
+
+    if(timetocalc == 0){
+        result = '00:00:00';
+    }
+
+    while(timetocalc != 0){
+
+        timetocalc--;
+        minutes++;
+
+        if(minutes == 60){
+            minutes = 0;
+            hours++;
+        }
+
+        if(hours == 24){
+            hours = 0;
+            days++;
+    }
+   };
+
+    if(hours < 10){
+        hours = '0' + String(hours);
+    }
+
+    if(minutes < 10){
+        minutes = '0' + String(minutes);
+    }
+
+    if(days > 0){
+        result = `${days} dn. ${hours}:${minutes}:00`;
+    } else if(timeinp.value == 0){
+        result = `00:00:00`;
+    } else if(days == 0){
+        result = `${hours}:${minutes}:00`;
+    }
+
+    timeres.textContent = result;
+});
 
 
 
+//INPUT THREE NUMS
+tnumf = document.querySelector('#tnumf');
+tnums = document.querySelector('#tnums');
+tnumt = document.querySelector('#tnumt');
+tnumres = document.querySelector('#tnumres');
 
+
+function maxNum() {
+    const max = Math.max(
+        Number(tnumf.value),
+        Number(tnums.value),
+        Number(tnumt.value)
+    );
+
+    tnumres.textContent = `Найбільше число, яке ви ввели - ${max}`;
+}
+
+
+tnumf.addEventListener('input', maxNum);
+tnums.addEventListener('input', maxNum);
+tnumt.addEventListener('input', maxNum);
+
+
+
+//footer subscribe
+const subinp = document.querySelector('#subinp');
+const subbtn = document.querySelector('#subbtn');
+
+subbtn.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    ismodalactive = true;
+
+    if(!subinp.value.trim().length == 0){
+        body.style.backgroundColor = 'black';
+        modalw.style.opacity = 2;
+        //opacity
+        header.style.opacity = 0.8;
+        main.style.opacity = 0.8;
+        footer.style.opacity = 0.8;
+        main.style.backgroundColor = 'white';
+        footer.style.backgroundColor = 'white';
+        modalwtwo.style.display = 'block';
+        modalwtwocross.addEventListener('click', () => {
+            modalwtwo.style.display = 'none';
+            ismodalactive = false;
+            body.style.background = 'none';
+            //opacity
+            header.style.opacity = 1;
+            main.style.opacity = 1;
+            footer.style.opacity = 1;
+        });
+    }else{
+        subinp.placeholder = 'Incorrect value';
+        subinp.classList.add('red-placeholder');
+        subinp.value = '';
+    }
+});
 
 main.style.backgroundColor = '#EEEEEE';
