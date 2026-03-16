@@ -13,11 +13,14 @@
 
 body {
   transition: 900ms;
+  position: relative;
 }
 
 .header {
   background-color: #FFFFFF;
-  z-index: 3;
+  z-index: 1000;
+  background-color: white;
+  position: relative;
 }
 .header_container {
   max-width: 1090px;
@@ -41,6 +44,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 10;
   position: relative;
 }
 .header_container_left_navigation--opt {
@@ -110,11 +114,12 @@ body {
   border-top: 0px;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
+  background-color: white;
   position: absolute;
-  top: -55px;
-  left: -30px;
+  top: -114px;
+  left: 140px;
   display: none;
-  z-index: 1 !important;
+  z-index: 2 !important;
   transform: translate(0, 0);
   transition: transform 1s ease-out;
 }
@@ -157,9 +162,10 @@ body {
   background-color: white;
   border-radius: 20px;
   z-index: 1000;
-  position: absolute;
-  top: calc(50% - 158px);
-  left: calc(50% - 288px);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .hi_container {
   max-width: 494px;
@@ -276,9 +282,10 @@ body {
   border-radius: 20px;
   display: none;
   z-index: 1000;
-  position: absolute;
-  top: calc(50% - 122.5px);
-  left: calc(50% - 231.5px);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .god_container {
   max-width: 378px;
@@ -414,6 +421,8 @@ main {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  position: relative;
+  z-index: 1;
 }
 
 .popgames {
@@ -835,4 +844,557 @@ main {
 .calc_container > button:active {
   transform: translate(1px, 1px);
   box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.2509803922);
+}
+
+.time {
+  padding-bottom: 36px;
+  position: relative;
+}
+.time::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 536px;
+  height: 1px;
+  background: var(--before-bg);
+}
+.time--title {
+  font-family: Montserrat Alternates;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  padding-top: 36px;
+  padding-bottom: 36px;
+}
+.time_container {
+  max-width: 392px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 70px;
+}
+.time_container_form {
+  max-width: 150px;
+  width: 100%;
+  max-height: 35px;
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.2509803922);
+}
+.time_container_form--inp {
+  width: 95px;
+  padding: 10px;
+  background-color: #D7D7D7;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border: none;
+  outline: none;
+}
+.time_container_form--inp::-moz-placeholder {
+  font-family: Montserrat Alternates;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #7E7E7E;
+}
+.time_container_form--inp::placeholder {
+  font-family: Montserrat Alternates;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #7E7E7E;
+}
+.time_container_form--btn {
+  background-color: #000000;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border: none;
+  padding: 17.5px;
+  cursor: pointer;
+  box-sizing: border-box;
+  position: relative;
+}
+.time_container_form--btn--svg {
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.time_container--res {
+  max-width: 76px;
+  width: 100%;
+  font-family: Montserrat Alternates;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+
+.game {
+  position: relative;
+}
+.game::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 536px;
+  height: 1px;
+  background: var(--before-bg);
+  z-index: 100000;
+}
+.game--title {
+  font-family: Montserrat Alternates;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  position: absolute;
+  z-index: 100;
+  top: 36px;
+  left: 477px;
+}
+
+.goawaydino {
+  width: 1090px;
+  height: 100px;
+  background-color: white;
+  position: absolute;
+  z-index: 1;
+  right: 0px;
+}
+
+.goawaydinoleft {
+  width: 230px;
+  height: 400px;
+  background-color: #FFFFFF;
+  position: absolute;
+  z-index: 100;
+  left: 0px;
+  bottom: 1300px;
+}
+
+.goawaydinorigth {
+  width: 230px;
+  height: 400px;
+  background-color: #FFFFFF;
+  position: absolute;
+  z-index: 100;
+  right: 0px;
+  bottom: 1300px;
+}
+
+.football {
+  margin-top: 305px;
+  padding-top: 36px;
+  z-index: 1000;
+  padding-bottom: 36px;
+  position: relative;
+}
+.football::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 536px;
+  height: 1px;
+  background: var(--before-bg);
+}
+.football--title {
+  font-family: Montserrat Alternates;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  padding-bottom: 36px;
+}
+.football_container {
+  max-width: 720px;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 37px;
+  z-index: 0;
+  cursor: url("imgs/Vector 227.png"), auto;
+  position: relative;
+}
+.football_container--ball {
+  position: absolute;
+  left: 92px;
+  top: 85px;
+  transition: 0.5s ease-out;
+  z-index: 1;
+}
+.football_container--field {
+  border-radius: 37px;
+}
+
+.tnums {
+  padding-bottom: 36px;
+  position: relative;
+}
+.tnums::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 536px;
+  height: 1px;
+  background: var(--before-bg);
+}
+.tnums--title {
+  font-family: Montserrat Alternates;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  padding-top: 36px;
+  padding-bottom: 36px;
+}
+.tnums_container {
+  max-width: 481px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 36px;
+}
+.tnums_container--inp {
+  padding: 10px 20px;
+  border-radius: 20px;
+  background-color: #D7D7D7;
+  outline: none;
+  border: none;
+  width: 95px;
+  box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.2509803922);
+}
+.tnums_container--inp::-moz-placeholder {
+  font-family: Montserrat Alternates;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #7E7E7E;
+}
+.tnums_container--inp::placeholder {
+  font-family: Montserrat Alternates;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #7E7E7E;
+}
+.tnums--res {
+  font-family: Montserrat Alternates;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+}
+
+.slider-disabled {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.ourteam {
+  position: relative;
+}
+.ourteam::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 536px;
+  height: 1px;
+  background: var(--before-bg);
+}
+.ourteam--title {
+  font-family: Montserrat Alternates;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  padding-top: 36px;
+  padding-bottom: 36px;
+}
+.ourteam--next {
+  position: absolute;
+  right: 92px;
+  top: 117px;
+  cursor: pointer;
+}
+.ourteam--prev {
+  position: absolute;
+  left: 92px;
+  top: 117px;
+  cursor: pointer;
+}
+.ourteam_wrapper {
+  width: 150px;
+  margin: 0 auto;
+  overflow: hidden;
+  transition: transform 400ms ease;
+}
+.ourteam_wrapper_slider {
+  display: flex;
+  gap: 18px;
+  transition: transform 400ms ease;
+  padding-bottom: 24px;
+}
+.ourteam_wrapper_slider_card > img {
+  margin-bottom: 20px;
+  border-radius: 20px;
+  width: 150px;
+  height: 150px;
+}
+.ourteam_wrapper_slider_card--title {
+  font-family: Montserrat Alternates;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  padding-bottom: 20px;
+  text-align: center;
+}
+.ourteam_wrapper_slider_card--txt {
+  font-family: Montserrat Alternates;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+}
+.ourteam_dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  padding-bottom: 36px;
+}
+.ourteam_dots .dot {
+  width: 30px;
+  height: 3px;
+  background: #ccc;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+.ourteam_dots .dot.active {
+  background: black;
+}
+
+.scientists {
+  position: relative;
+  padding-bottom: 36px;
+}
+.scientists::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 536px;
+  height: 1px;
+  background: var(--before-bg);
+}
+.scientists--title {
+  font-family: Montserrat Alternates;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 16px;
+  leading-trim: NONE;
+  line-height: 100%;
+  letter-spacing: 0%;
+  padding-top: 36px;
+  text-align: center;
+}
+.scientists_container {
+  max-width: 585px;
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  row-gap: 36px;
+  -moz-column-gap: 59px;
+       column-gap: 59px;
+  padding-top: 36px;
+  padding-bottom: 36px;
+}
+.scientists_container > img {
+  border-radius: 20px;
+}
+.scientists_btns button:nth-child(odd) {
+  justify-self: end;
+  align-self: self-start;
+}
+.scientists_btns button:nth-child(even) {
+  justify-self: start;
+}
+.scientists_btns {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  -moz-column-gap: 36px;
+       column-gap: 36px;
+  row-gap: 20px;
+  padding-bottom: 20px;
+}
+.scientists_btns--btn {
+  font-family: Montserrat Alternates;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: right;
+  background-color: #000000;
+  cursor: pointer;
+  color: #FFFFFF;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.2509803922);
+  text-align: left;
+  transition: 100ms;
+}
+.scientists_btns--btn:hover {
+  background-color: #3e8e41;
+}
+.scientists_btns--btn:active {
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.2509803922);
+}
+.scientists_btn {
+  display: flex;
+  justify-content: center;
+}
+.scientists_btn--btn {
+  font-family: Montserrat Alternates;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: right;
+  background-color: #000000;
+  cursor: pointer;
+  color: #FFFFFF;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.2509803922);
+  transition: 100ms;
+}
+.scientists_btn--btn:hover {
+  background-color: #3e8e41;
+}
+.scientists_btn--btn:active {
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.2509803922);
+}
+
+.footer_container {
+  max-width: 1090px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 61px;
+  padding-bottom: 59px;
+  align-items: center;
+}
+.footer_container_info--txt {
+  max-width: 207px;
+  font-family: Montserrat Alternates;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 12px;
+  line-height: 170%;
+  letter-spacing: 0%;
+}
+.footer_container_sub {
+  max-width: 347px;
+  width: 100%;
+}
+.footer_container_sub_form {
+  max-width: 347px;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 18px;
+}
+.footer_container_sub_form--inp {
+  width: 114px;
+  padding: 10px 80px 10px 10px;
+  background-color: #D7D7D7;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+}
+.footer_container_sub_form--inp::-moz-placeholder {
+  font-family: Montserrat Alternates;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+.footer_container_sub_form--inp::placeholder {
+  font-family: Montserrat Alternates;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+.footer_container_sub_form--btn {
+  font-family: Montserrat Alternates;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px;
+  cursor: pointer;
+  background-color: #000000;
+}
+.footer_container_sub--txt {
+  font-family: Montserrat Alternates;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 6px;
+  line-height: 100%;
+  letter-spacing: 0%;
 }/*# sourceMappingURL=style.css.map */
