@@ -499,6 +499,7 @@ timecalc.addEventListener('click', (e) => {
 
     timeres.textContent = result;
 });
+<<<<<<< HEAD
 
 //football
 const field = document.querySelector('#field');
@@ -510,9 +511,16 @@ field.addEventListener('click', (e) => { //layerX, layerY
     rotation += 360;
     ball.style.transform = `translate(${e.layerX - 115}px, ${e.layerY - 108}px) rotate(${rotation}deg)`;
 });
+=======
+>>>>>>> 9a9141c20e8369140600ab6a0f84777e8f7a4a3f
 
 
 
+//INPUT THREE NUMS
+tnumf = document.querySelector('#tnumf');
+tnums = document.querySelector('#tnums');
+tnumt = document.querySelector('#tnumt');
+tnumres = document.querySelector('#tnumres');
 
 //INPUT THREE NUMS
 tnumf = document.querySelector('#tnumf');
@@ -860,6 +868,58 @@ subbtn.addEventListener('click', (e) => {
 //ДОДАТКОВА ПЛЮШКА
 document.querySelectorAll('img', 'svg').forEach(img => {
     img.setAttribute('draggable', 'false');
+});
+
+function maxNum() {
+    const max = Math.max(
+        Number(tnumf.value),
+        Number(tnums.value),
+        Number(tnumt.value)
+    );
+
+    tnumres.textContent = `Найбільше число, яке ви ввели - ${max}`;
+}
+
+
+tnumf.addEventListener('input', maxNum);
+tnums.addEventListener('input', maxNum);
+tnumt.addEventListener('input', maxNum);
+
+
+
+//footer subscribe
+const subinp = document.querySelector('#subinp');
+const subbtn = document.querySelector('#subbtn');
+
+subbtn.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    ismodalactive = true;
+
+    if(!subinp.value.trim().length == 0){
+        body.style.backgroundColor = 'black';
+        modalw.style.opacity = 2;
+        //opacity
+        header.style.opacity = 0.8;
+        main.style.opacity = 0.8;
+        footer.style.opacity = 0.8;
+        main.style.backgroundColor = 'white';
+        footer.style.backgroundColor = 'white';
+        modalwtwo.style.display = 'block';
+        modalwtwocross.addEventListener('click', () => {
+            modalwtwo.style.display = 'none';
+            ismodalactive = false;
+            body.style.background = 'none';
+            //opacity
+            header.style.opacity = 1;
+            main.style.opacity = 1;
+            footer.style.opacity = 1;
+        });
+    }else{
+        subinp.placeholder = 'Incorrect value';
+        subinp.classList.add('red-placeholder');
+        subinp.value = '';
+    }
 });
 
 main.style.backgroundColor = '#EEEEEE';

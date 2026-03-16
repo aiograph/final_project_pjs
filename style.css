@@ -943,6 +943,7 @@ main {
   letter-spacing: 0%;
 }
 
+<<<<<<< HEAD
 .game {
   position: relative;
 }
@@ -1046,6 +1047,8 @@ main {
   border-radius: 37px;
 }
 
+=======
+>>>>>>> 9a9141c20e8369140600ab6a0f84777e8f7a4a3f
 .tnums {
   padding-bottom: 36px;
   position: relative;
@@ -1116,6 +1119,7 @@ main {
   text-align: center;
 }
 
+<<<<<<< HEAD
 .slider-disabled {
   opacity: 0.3;
   pointer-events: none;
@@ -1323,6 +1327,8 @@ main {
   box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.2509803922);
 }
 
+=======
+>>>>>>> 9a9141c20e8369140600ab6a0f84777e8f7a4a3f
 .footer_container {
   max-width: 1090px;
   width: 100%;
